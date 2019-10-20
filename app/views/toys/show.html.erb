@@ -1,0 +1,35 @@
+<div id="show">
+
+    <h1>Show</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Posted</th>
+                <th>User</th>
+                <th class="link-column"></th>
+                <th class="link-column"></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td><%= @toy["id"] %></td>
+                <td><%= @toy["name"] %></td>
+                <td><%= @toy["posted"] %></td>
+                <td><%= @toy["user"] %></td>
+                <td><%= link_to("Edit", edit_toy_path(@toy["id"])) %></td>
+                <td><%= link_to("Delete", toy_path(@toy["id"])) %></td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <p>
+        <%= @toy["description"] %>
+    </p>
+
+</div>

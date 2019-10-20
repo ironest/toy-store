@@ -1,0 +1,36 @@
+<div id="index">
+
+    <h1>Index</h1>
+    <%= link_to("New Toy", new_toy_path, class: "new-toy") %>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Posted</th>
+                <th>User</th>
+                <th class="link-column"></th>
+                <th class="link-column"></th>
+                <th class="link-column"></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <% @toys.each do |toy| %>
+                <tr>
+                    <td><%= toy["id"] %></td>
+                    <td><%= toy["name"] %></td>
+                    <td><%= toy["posted"] %></td>
+                    <td><%= toy["user"] %></td>
+                    <td><%= link_to("Show", toy_path(toy["id"])) %></td>
+                    <td><%= link_to("Edit", edit_toy_path(toy["id"])) %></td>
+                    <td><%= link_to("Delete", toy_path(toy["id"])) %></td>
+                </tr>
+            <% end %>
+
+        </tbody>
+
+    </table>
+
+</div>

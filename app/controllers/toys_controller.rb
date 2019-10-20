@@ -1,6 +1,7 @@
 class ToysController < ApplicationController
 
     def index
+        @toys = Toy.all.order(posted: :asc)
     end
 
     def new
@@ -10,6 +11,8 @@ class ToysController < ApplicationController
     end
 
     def show
+        id = params[:id].to_i
+        @toy = Toy.find(id)
     end
 
     def edit
