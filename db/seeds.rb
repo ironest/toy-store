@@ -11,7 +11,7 @@ for i in 1..20
 
     entry = {
         name: Faker::Game.title,
-        description: Faker::Lorem.paragraph,
+        description: Faker::Lorem.paragraph(sentence_count: 4),
         posted: Faker::Date.between(from: 1.year.ago, to: 2.days.ago),
         user: Faker::Name.first_name
     }
