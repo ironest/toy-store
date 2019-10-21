@@ -6,18 +6,32 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+for i in 1..10
+
+    user = {
+        email: Faker::Internet.email,
+        password: Faker::Internet.password(min_length: 8)
+    }
+
+    User.create( user )
+
+    puts "User #{i} | #{user[:email]} | #{user[:password]}"
+
+end
+
+users = User.all
 
 for i in 1..20
 
-    entry = {
+    toy = {
         name: Faker::Game.title,
         description: Faker::Lorem.paragraph(sentence_count: 4),
         posted: Faker::Date.between(from: 1.year.ago, to: 2.days.ago),
-        user: Faker::Name.first_name
+        user_id: users.sample.id
     }
 
-    Toy.create( entry )
+    Toy.create( toy )
 
-    puts "Toy #{i} | #{entry[:name]} | #{entry[:description]} | #{entry[:posted]} | #{entry[:user]}"
+    puts "Toy #{i} | #{toy[:name]} | #{toy[:description]} | #{toy[:posted]} | #{toy[:user_id]}"
 
 end

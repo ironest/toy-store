@@ -22,7 +22,7 @@
                     <td><%= toy["id"] %></td>
                     <td><%= toy["name"] %></td>
                     <td><%= toy["posted"] %></td>
-                    <td><%= toy["user"] %></td>
+                    <td><%= toy["user_id"] %></td>
                     <td><%= link_to("Show", toy_path(toy["id"])) %></td>
                     <td><%= link_to("Edit", edit_toy_path(toy["id"])) %></td>
                     <td><%= link_to("Delete", toy_path(toy["id"]), method: :delete, data: { confirm: 'Are you sure?' }) %></td>
