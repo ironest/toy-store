@@ -21,7 +21,7 @@
 
         <div>
             <%= form.label :user_id %>
-            <%= select_tag(:user_id, options_for_select(@options, @toy.user_id)) %>
+            <%= form.select(:user_id, options_for_select(@options, @toy.user_id))%>
         </div>
 
         <div>
