@@ -1,0 +1,35 @@
+<div id="new">
+
+    <h1>New</h1>
+
+    <%= form_with model: @toy, local: true do |form| %>
+
+        <div>
+            <%= form.label :name %>
+            <%= form.text_field :name %>
+        </div>
+
+        <div>
+            <%= form.label :description %>
+            <%= form.text_area :description %>
+        </div>
+
+        <div>
+            <%= form.label :posted %>
+            <%= form.date_field :posted %>
+        </div>
+
+        <div>
+            <%= form.label :user %>
+            <%= form.text_field :user %>
+        </div>
+
+        <div>
+            <%= form.submit :Create %>
+        </div>
+        
+        <%= link_to("Back", toys_path, class: "standard-button") %>
+
+    <% end %>
+
+</div>

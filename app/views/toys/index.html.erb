@@ -1,7 +1,7 @@
 <div id="index">
 
     <h1>Index</h1>
-    <%= link_to("New Toy", new_toy_path, class: "new-toy") %>
+    <%= link_to("New Toy", new_toy_path, class: "standard-button") %>
 
     <table>
         <thead>
@@ -25,7 +25,7 @@
                     <td><%= toy["user"] %></td>
                     <td><%= link_to("Show", toy_path(toy["id"])) %></td>
                     <td><%= link_to("Edit", edit_toy_path(toy["id"])) %></td>
-                    <td><%= link_to("Delete", toy_path(toy["id"])) %></td>
+                    <td><%= link_to("Delete", toy_path(toy["id"]), method: :delete, data: { confirm: 'Are you sure?' }) %></td>
                 </tr>
             <% end %>
 
