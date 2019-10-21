@@ -7,19 +7,25 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 for i in 1..10
-
     user = {
         email: Faker::Internet.email,
         password: Faker::Internet.password(min_length: 8)
     }
-
     User.create( user )
-
     puts "User #{i} | #{user[:email]} | #{user[:password]}"
+end
 
+for i in 1..10
+    manufacturer = {
+        name: Faker::Company.name,
+        location: Faker::Address.state
+    }
+    Manufacturer.create( manufacturer )
+    puts "Manufacturer #{i} | #{manufacturer[:name]} | #{manufacturer[:location]}"
 end
 
 users = User.all
+manufacturers = Manufacturer.all
 
 for i in 1..20
 
@@ -27,7 +33,8 @@ for i in 1..20
         name: Faker::Game.title,
         description: Faker::Lorem.paragraph(sentence_count: 4),
         posted: Faker::Date.between(from: 1.year.ago, to: 2.days.ago),
-        user_id: users.sample.id
+        user_id: users.sample.id,
+        manufacturer_id: manufacturers.sample.id
     }
 
     Toy.create( toy )

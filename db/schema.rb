@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_115312) do
+ActiveRecord::Schema.define(version: 2019_10_21_115532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2019_10_21_115312) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.bigint "manufacturer_id"
+    t.index ["manufacturer_id"], name: "index_toys_on_manufacturer_id"
     t.index ["user_id"], name: "index_toys_on_user_id"
   end
 
@@ -39,5 +41,6 @@ ActiveRecord::Schema.define(version: 2019_10_21_115312) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "toys", "manufacturers"
   add_foreign_key "toys", "users"
 end
