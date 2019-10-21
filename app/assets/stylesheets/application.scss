@@ -29,16 +29,23 @@ h1 {
     margin: 10px;
 }
 
+.standard-button {
+    display: inline-block;
+    margin: 10px 0;
+    background-color: dodgerblue;
+    color: white;
+    padding: 5px;
+    &:hover {
+        color: black;
+        background-color: gold;
+    }
+}
+
 #index,
 #show {
 
     width: 900px;
     margin: 0 auto;
-
-    .new-toy {
-        display: inline-block;
-        margin: 10px 0;
-    }
 
     .link-column {
         width: 50px;
@@ -75,5 +82,39 @@ h1 {
         width: 80%;
         text-align: center;
     }
+
+}
+
+#edit,
+#new {
+
+    form {
+        width: 300px;
+        margin: 0 auto;
+        border: 2px solid dodgerblue;
+        padding: 20px;
+    }
+
+    label {
+        display: block;
+    }
+
+    input,
+    textarea
+    {
+        font-size: 16px;
+        line-height: 16px;
+        margin-bottom: 20px;
+        margin-top: 3px;
+        padding: 3px;
+        width: 95%;
+    }
+
+    input[type=submit] {
+        width: 50%;
+        display: inline-block;
+        margin-left: 25%;
+    }
+
 
 }
