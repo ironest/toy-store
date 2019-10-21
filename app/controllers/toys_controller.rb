@@ -22,6 +22,7 @@ class ToysController < ApplicationController
     def edit
         id = params[:id].to_i
         @toy = Toy.find(id)
+        @options = User.pluck(:email).zip(User.pluck(:id))
     end
 
     def update
@@ -29,7 +30,8 @@ class ToysController < ApplicationController
         id = params[:id].to_i
         toy = Toy.find(id)
 
-        whitelisted_params = params.require(:toy).permit(:name, :description, :posted, :user)
+        whitelisted_params = params.require(:toy).permit(:name, :description, :posted, :user_id)
+
         toy.update(whitelisted_params)
         redirect_to toy_path(id)
 

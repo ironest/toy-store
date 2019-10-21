@@ -20,8 +20,8 @@
         </div>
 
         <div>
-            <%= form.label :user %>
-            <%= form.text_field :user %>
+            <%= form.label :user_id %>
+            <%= select_tag(:user_id, options_for_select(@options, @toy.user_id)) %>
         </div>
 
         <div>
