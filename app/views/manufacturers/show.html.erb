@@ -1,0 +1,31 @@
+<div id="show">
+
+    <h1>Show Manufacturer Details</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th class="link-column"></th>
+                <th class="link-column"></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td><%= @manufacturer["id"] %></td>
+                <td><%= @manufacturer["name"] %></td>
+                <td><%= @manufacturer["location"] %></td>
+                <td><%= link_to("Edit", edit_manufacturer_path(@manufacturer["id"])) %></td>
+                <td><%= link_to("Delete", manufacturer_path(@manufacturer["id"])) %></td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <%= link_to("Back", manufacturers_path, class: "standard-button") %>
+
+</div>

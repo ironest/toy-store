@@ -17,7 +17,7 @@ end
 
 for i in 1..10
     manufacturer = {
-        name: Faker::Company.name,
+        name: Faker::Device.manufacturer,
         location: Faker::Address.state
     }
     Manufacturer.create( manufacturer )

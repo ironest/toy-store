@@ -19,4 +19,15 @@ Rails.application.routes.draw do
   patch "/users/:id", to: "users#update"
   delete "/users/:id", to: "users#destroy"  
 
+  get "/manufacturers", to: "manufacturers#index", as: "manufacturers"
+  get "/manufacturers/new", to: "manufacturers#new", as: "new_manufacturer"
+  post "/manufacturers", to: "manufacturers#create"
+  get "/manufacturers/:id", to: "manufacturers#show", as: "manufacturer"
+  get "/manufacturers/:id/edit", to: "manufacturers#edit", as: "edit_manufacturer"
+  put "/manufacturers/:id", to: "manufacturers#update"
+  patch "/manufacturers/:id", to: "manufacturers#update"
+  delete "/manufacturers/:id", to: "manufacturers#destroy"  
+
+
+
 end

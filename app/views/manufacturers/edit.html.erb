@@ -1,0 +1,25 @@
+<div id="edit">
+
+    <h1>Edit Manufacturer</h1>
+
+    <%= form_with model: @manufacturer, local: true do |form| %>
+
+        <div>
+            <%= form.label :name %>
+            <%= form.text_field :name %>
+        </div>
+
+        <div>
+            <%= form.label :location %>
+            <%= form.text_field :location %>
+        </div>
+
+        <div>
+            <%= form.submit :Update %>
+        </div>
+
+        <%= link_to("Back", manufacturers_path, class: "standard-button") %>
+
+    <% end %>
+
+</div>
