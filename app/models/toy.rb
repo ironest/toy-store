@@ -1,4 +1,4 @@
 class Toy < ApplicationRecord
     belongs_to :user
-    has_one :manufacturer
+    belongs_to :manufacturer
 end
