@@ -1,6 +1,6 @@
 <div id="index">
 
-    <h1>Index</h1>
+    <h1>List of Toys</h1>
     <%= link_to("New Toy", new_toy_path, class: "standard-button") %>
 
     <table>
@@ -9,7 +9,7 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Posted</th>
-                <th>User_ID</th>
+                <th>User</th>
                 <th>Manufacturer_ID</th>
                 <th class="link-column"></th>
                 <th class="link-column"></th>
@@ -23,7 +23,7 @@
                     <td class="center"><%= toy["id"] %></td>
                     <td><%= toy["name"] %></td>
                     <td class="center"><%= toy["posted"] %></td>
-                    <td class="center"><%= toy["user_id"] %></td>
+                    <td><%= toy.user.email %></td>
                     <td class="center"><%= toy["manufacturer_id"] %></td>
                     <td><%= link_to("Show", toy_path(toy["id"])) %></td>
                     <td><%= link_to("Edit", edit_toy_path(toy["id"])) %></td>
