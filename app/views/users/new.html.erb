@@ -1,0 +1,25 @@
+<div id="new">
+
+    <h1>New User</h1>
+
+    <%= form_with model: @user, local: true do |form| %>
+
+        <div>
+            <%= form.label :email %>
+            <%= form.text_field :email %>
+        </div>
+
+        <div>
+            <%= form.label :password %>
+            <%= form.text_field :password %>
+        </div>
+
+        <div>
+            <%= form.submit :Create %>
+        </div>
+        
+        <%= link_to("Back", users_path, class: "standard-button") %>
+
+    <% end %>
+
+</div>
